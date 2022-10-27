@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hello world</h1>
+<a href="/create">Create new user</a>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="user : ${lsUser}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.phone}"></td>
+        <td>
+            <a th:href="@{/edit/{id}(id=${user.id})}"> Edit </a>
+        </td>
+        <td>
+            <a th:href="@{/delete/{id}(id=${user.id})}"> Delete </a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

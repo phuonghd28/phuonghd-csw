@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/update/{id}(id=${user.id})}" method="post">
+  <label>Name: </label>
+  <input type="text" name="name" th:value="${user.name}">
+  <label>Email: </label>
+  <input type="text" name="email" th:value="${user.email}">
+  <label>Phone: </label>
+  <input type="text" name="phone" th:value="${user.phone}">
+  <button type="submit">Update</button>
+</form>
+</body>
+</html>
